@@ -1,12 +1,16 @@
 
 	<div id="post_content">
-
-	
-		<% @posts.each do |post| %>
-			<div class="post_wrapper">
-			  <h2 class="title"><%= link_to post.title, post %></h2>
-			  <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-			</div>
-		<% end %>	
-	<%= will_paginate @posts %>	
+			<% @posts.each do |post| %>
+				<div class="post_wrapper">
+				  <h2 class="title"><%= link_to post.title, post %></h2>
+				  <p class="date"><%= post.created_at.strftime("%B, %d, %Y")%></p>
+				   <p class="email"> by 
+				  	<%= post.author.email rescue "" %>
+				  </p>
+				  <p> <%= image_tag post.image.url :medium %> </p>
+				  <p class="body"> <%=  post.body %> </p>
+				</div>
+				<br>
+			<% end %>	
+		<%= will_paginate @posts %>	
 	</div>	

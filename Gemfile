@@ -30,7 +30,11 @@ gem 'devise'
 
 gem 'acts-as-taggable-on'
 
+gem 'better_errors'
+
 gem 'paperclip'
+
+gem 'binding_of_caller'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
