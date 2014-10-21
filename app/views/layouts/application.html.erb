@@ -11,7 +11,7 @@
  <div id="sidebar">
  	<div id="logo">
  		<%= link_to root_path do %>
- 			<% image_tag "logo.svg"	%>
+ 			<% image_tag "logo.svg"%>
  		<% end %>	
 	</div>
 	<ul>
@@ -20,9 +20,13 @@
 		<li><%= link_to "About", about_path %></li>
 
 	</ul>
+	<ul>
+	<li>
 	<% if !author_signed_in? %>
-	<p class="sign_in">Author Sign In</p>
+	<p><%= link_to "Author Sign In", sign_in_path %> </p>
 	<% end %>
+	</li>
+	</ul>
 </div>
 
 
@@ -41,7 +45,7 @@
 		<% if author_signed_in? %> 
 			<div class="buttons">
 				<button class="button"><%= link_to "New Post", new_post_path %></button>
-				<button class="button">Log Out</button>
+				<button class="button"><%= link_to "Log Out", sign_out_path %></button>
 			</div>
 		<% end %>	
 	</div>	
